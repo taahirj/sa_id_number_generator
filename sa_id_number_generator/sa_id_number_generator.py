@@ -113,5 +113,5 @@ if __name__ == '__main__':
         current_citizen_status = "citizen" if int(current_sa_id[0][10:11]) == 0 else "resident"
         current_age = int((datetime.now().date()-date.fromisoformat(current_sa_id[1])).days / 365.25)
         current_type = "minor" if current_age < 18 else "adult"
-        print(f" | {current_sa_id[0]}    | {current_gender.ljust(6)}  | {current_type}  |  {current_date_of_birth.ljust(10)}    | {str(current_age).rjust(2)}   | {current_citizen_status.ljust(8)}       |");
+        print(f" | {current_sa_id[0]}    | {current_gender.ljust(6)}  | {current_type}  | {current_date_of_birth.ljust(10)}     | {str(current_age).rjust(2)}   | {current_citizen_status.ljust(8)}       |");
     print("  ------------------------------------------------------------------------------");
