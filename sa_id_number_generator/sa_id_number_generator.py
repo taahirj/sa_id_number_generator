@@ -33,9 +33,9 @@ def generate_sa_id(date_of_birth = "any", gender = "any", citizen_status = "any"
     # Checks, creates and handles errors for the date of birth portion of the id number
     try:
         if str(date_of_birth).lower() == "minor":
-            date_of_birth = str(randint(datetime.now().year - 15,datetime.now().year - 1)) + "-" + str(randint(1,12)).zfill(2) + "-" + str(randint(1,28)).zfill(2)
+            date_of_birth = str(randint(datetime.now().year - 16,datetime.now().year - 1)) + "-" + str(randint(1,12)).zfill(2) + "-" + str(randint(1,28)).zfill(2)
         if str(date_of_birth).lower() == "adult":
-            date_of_birth = str(randint(datetime.now().year - 60,datetime.now().year - 18)) + "-" + str(randint(1,12)).zfill(2) + "-" + str(randint(1,28)).zfill(2)
+            date_of_birth = str(randint(datetime.now().year - 60,datetime.now().year - 19)) + "-" + str(randint(1,12)).zfill(2) + "-" + str(randint(1,28)).zfill(2)
         if str(date_of_birth).lower() == "any":
             date_of_birth = str(randint(datetime.now().year - 60,datetime.now().year - 1)) + "-" + str(randint(1,12)).zfill(2) + "-" + str(randint(1,28)).zfill(2)
         dob = date.fromisoformat(str(date_of_birth))
