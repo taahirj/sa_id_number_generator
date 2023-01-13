@@ -102,12 +102,21 @@ if __name__ == '__main__':
     citizen_status = options.citizen_status
     loops = options.loops
     
-    print("  ------------------------------------------------------------------------------");
-    print(" | Identity Number  | Gender  | Type   | Date of Birth  | Age  | Citizen Status |");
-    print("  ------------------------------------------------------------------------------");
     for loop in range(loops):
         # Returns id number generated
         current_sa_id = generate_sa_id(date_of_birth = date_of_birth,gender = gender,citizen_status = citizen_status)
+        
+        # Check the id number length to ensure it is correct otherwise quit
+        if len(current_sa_id[0]) != 13:
+            print(current_sa_id[0])
+            quit()
+        
+        # Only print the header on the first loop
+        if loop == 0:
+            print("  ------------------------------------------------------------------------------");
+            print(" | Identity Number  | Gender  | Type   | Date of Birth  | Age  | Citizen Status |");
+            print("  ------------------------------------------------------------------------------");
+            
         current_date_of_birth = current_sa_id[1]
         current_gender = "female" if int(current_sa_id[0][6:10]) < 5000 else "male"
         current_citizen_status = "citizen" if int(current_sa_id[0][10:11]) == 0 else "resident"
